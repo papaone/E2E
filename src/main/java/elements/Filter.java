@@ -1,7 +1,6 @@
 package elements;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 public class Filter {
@@ -14,22 +13,19 @@ public class Filter {
             searchField = By.cssSelector("input[placeholder='Search by Talk Name']");
 
     public Filter selectLocation(String countryName) {
-        SelenideElement dropDown = Selenide.$(locationDropDown);
-        dropDown.click();
+        Selenide.$(locationDropDown).click();
         Selenide.$(By.xpath("//label[@data-value='" + countryName + "']" )).click();
         return this;
     }
 
     public Filter selectCategory(String categoryName) {
-        SelenideElement dropDown = Selenide.$(categoryDropDown);
-        dropDown.click();
+        Selenide.$(categoryDropDown).click();
         Selenide.$(By.xpath("//label[@data-value='" + categoryName + "']" )).click();
         return this;
     }
 
     public Filter selectLanguage(String languageName) {
-        SelenideElement dropDown = Selenide.$(languageDropDown);
-        dropDown.click();
+        Selenide.$(languageDropDown).click();
         Selenide.$(By.xpath("//label[@data-value='" + languageName + "']" )).click();
         return this;
     }

@@ -43,18 +43,15 @@ public class EventsPage {
         return Selenide.$$(pastEventCard);
     }
 
-    public SelenideElement getCardName()
-    {
+    public SelenideElement getCardName() {
         return getPastEventCard().first().find(eventCardName);
     }
 
-    public SelenideElement getCardDate()
-    {
+    public SelenideElement getCardDate() {
         return getPastEventCard().first().find(eventCardDate);
     }
 
-    public SelenideElement getCardRegistrationInformation()
-    {
+    public SelenideElement getCardRegistrationInformation() {
         return getPastEventCard().first().find(eventCardRegistrationInformation);
     }
 
