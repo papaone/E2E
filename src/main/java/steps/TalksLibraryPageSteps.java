@@ -63,7 +63,6 @@ public class TalksLibraryPageSteps {
         for(SelenideElement element : talksLibraryPage.getAllTalksCardName())
         {
             Assertions.assertTrue(element.getText().contains(name));
-            System.out.println(element.getText());
         }
         return this;
     }
