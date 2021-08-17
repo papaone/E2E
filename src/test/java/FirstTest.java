@@ -6,6 +6,8 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 import steps.EventsPageSteps;
 import steps.MainPageSteps;
 
+import java.text.ParseException;
+
 @Execution(ExecutionMode.CONCURRENT)
 public class FirstTest extends BaseTest {
 
@@ -23,11 +25,21 @@ public class FirstTest extends BaseTest {
     @Test
     @AllureId("2")
     @Description("View Event Cards")
-    public void testTwo() {
+    public void viewEventCardsContent() {
         mainPageSteps.navigateToEventsPage();
         eventsPageSteps
                 .clickOnPastEventsButton()
                 .assertPastEventsCardsNumberIsNotNull()
                 .assertPastEventCardContent();
+    }
+
+    @Test
+    @AllureId("3")
+    @Description("Validate date for upcoming event")
+    public void testTwo() throws ParseException {
+        mainPageSteps.navigateToEventsPage();
+        eventsPageSteps
+                .assertUpcomingEventsCardsNumberIsNotNull()
+                .assertUpcomingEventsCardsDate();
     }
 }

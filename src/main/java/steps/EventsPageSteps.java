@@ -1,13 +1,25 @@
 package steps;
 
-import com.codeborne.selenide.junit.SoftAsserts;
 import elements.PageLoader;
 import io.qameta.allure.Step;
 import org.assertj.core.api.SoftAssertions;
+import org.hamcrest.Matcher;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import pages.EventsPage;
 
+import java.sql.SQLOutput;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+import java.util.Locale;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class EventsPageSteps {
+
     EventsPage eventsPage = new EventsPage();
     PageLoader pageLoader = new PageLoader();
 
@@ -42,6 +54,23 @@ public class EventsPageSteps {
             softAssertions.assertThat(eventsPage.getCardSpeakers().first()).as("card speakers").isNotNull();
         });
 
+        return this;
+    }
+
+    @Step("Assert that the 'Upcoming Event' cards number is not null")
+    public EventsPageSteps assertUpcomingEventsCardsNumberIsNotNull() {
+        pageLoader.waitLoaderDisappears();
+
+        Assertions.assertNotNull(eventsPage.getPastEventCard());
+        return this;
+    }
+
+    @Step("Assert that the 'Upcoming Event' cards date")
+    public EventsPageSteps assertUpcomingEventsCardsDate() throws ParseException {
+        Date date =  new SimpleDateFormat("dd MMM yyyy", Locale.US).parse(eventsPage.getCardDate().getText().substring(8));
+
+        assertThat(true, Matchers.either(Matchers.is(date.after(Date.from(Instant.now()))))
+                .or(Matchers.is(date.equals(Date.from(Instant.now())))));
         return this;
     }
 }
