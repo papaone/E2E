@@ -4,29 +4,24 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.By;
+import steps.EventsPageSteps;
+import steps.MainPageSteps;
 
 import static com.codeborne.selenide.Selenide.*;
 
 @Execution(ExecutionMode.CONCURRENT)
 public class FirstTest extends BaseTest{
 
-    @Test
-    @AllureId("2")
-    @Description("Check User logged in to otus.ru")
-    public void goToGoogle()
-    {
-        open("https://google.com");
-        sleep(500);
-        $(By.xpath("test")).click();
-
-    }
+    MainPageSteps mainPageSteps = new MainPageSteps();
+    EventsPageSteps eventsPageSteps = new EventsPageSteps();
 
     @Test
     @AllureId("1")
-    @Description("test2")
-    public void goToOtus()
+    @Description("View upcoming events")
+    public void viewUpcomingEvents()
     {
-        open("https://otus.ru");
-        sleep(500);
+        mainPageSteps.navigateToMainPage()
+                .clickOnEventsTab();
+       eventsPageSteps.checkEventCounterIsSameAsCardsCount();
     }
 }
