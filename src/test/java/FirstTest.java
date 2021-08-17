@@ -84,7 +84,7 @@ public class FirstTest extends BaseTest {
     @Test
     @AllureId("6")
     @Description("Check talks card search by keyword")
-    public void test6() {
+    public void checkTalksCardSearchByKeyword() {
         String searchValue = "QA";
         mainPageSteps.navigateToTalksLibraryPage();
         talksLibraryPageSteps.enterSearchValue(searchValue)
