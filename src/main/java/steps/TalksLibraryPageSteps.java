@@ -4,14 +4,10 @@ import com.codeborne.selenide.SelenideElement;
 import elements.Filter;
 import elements.PageLoader;
 import io.qameta.allure.Step;
-import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Assertions;
 import pages.TalksLibraryPage;
 
-import java.util.Collections;
-
 import static com.codeborne.selenide.Selenide.sleep;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TalksLibraryPageSteps {
     TalksLibraryPage talksLibraryPage = new TalksLibraryPage();

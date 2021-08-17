@@ -2,11 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TalksLibraryPage {
     private final By
