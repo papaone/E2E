@@ -8,17 +8,10 @@ public class MainPageSteps {
     MainPage mainPage = new MainPage();
     MainHeader mainHeader = new MainHeader();
 
-    @Step("Navigate to 'Main Page'")
-    public MainPageSteps navigateToMainPage(){
+    @Step("Navigate to 'Events Page'")
+    public MainPageSteps navigateToEventsPage(){
         mainPage.goToMainPage();
-        return this;
-    }
-
-    @Step("Click on 'Events' tab")
-    public MainPageSteps clickOnEventsTab()
-    {
         mainHeader.clickOnEventsTab();
         return this;
     }
-
 }
