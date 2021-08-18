@@ -9,7 +9,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'GIT_URL', defaultValue: 'https://github.com/papaone/E2E', description: 'The target git url')
+        string(name: 'GIT_URL', defaultValue: 'https://github.com/papaone/E2E.git', description: 'The target git url')
         string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'The target git branch')
     }
 
