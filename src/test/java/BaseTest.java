@@ -13,9 +13,8 @@ public class BaseTest {
 
     @BeforeAll
     public static void openApp() {
-        //Configuration.remote = "http://192.168.50.212:4444/wd/hub";
         Configuration.browser = "chrome";
-        //Configuration.baseUrl = "http://192.168.50.212:4444";
+        //Configuration.baseUrl = "http://192.168.50.212:4444/wd/hub";
         Configuration.browserSize = "1920x1080";
         Configuration.browserVersion = "88";
         Configuration.timeout = 10000;
@@ -24,7 +23,7 @@ public class BaseTest {
         Configuration.browserCapabilities.setCapability("enableVNC", true);
         Configuration.pageLoadStrategy = PageLoadStrategy.NONE.toString();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
-        //open(Configuration.baseUrl /*Configuration.remote */);
+        //open(Configuration.baseUrl);
     }
 
     @AfterEach
