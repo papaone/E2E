@@ -14,4 +14,4 @@ Browser can be changed in `BaseTest` class `Configuration.browser = "chrome";` `
 3. start selenide env
 4. provide `selenoidUrl` in `TestsConfig` interface
 5. uncomment `Configuration.remote = config.selenoidUrl();` in `BaseTest` class  
-6. To run tests use `mvn clean test`
+6. run tests use `mvn clean test`
