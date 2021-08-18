@@ -12,7 +12,7 @@ import java.text.ParseException;
 
 
 @Execution(ExecutionMode.CONCURRENT)
-public class FirstTest extends BaseTest {
+public class E2ETests extends BaseTest {
 
     MainPageSteps mainPageSteps = new MainPageSteps();
     EventsPageSteps eventsPageSteps = new EventsPageSteps();
