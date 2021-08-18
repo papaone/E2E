@@ -10,14 +10,16 @@ public class MainPageSteps {
 
     @Step("Navigate to 'Events' page")
     public MainPageSteps navigateToEventsPage(){
-        mainPage.goToMainPage();
+        mainPage.goToMainPage()
+                .submitCookieIfDisplayed();
         mainHeader.clickOnEventsTab();
         return this;
     }
 
     @Step("Navigate to 'Talks Library' page")
     public MainPageSteps navigateToTalksLibraryPage(){
-        mainPage.goToMainPage();
+        mainPage.goToMainPage()
+                .submitCookieIfDisplayed();
         mainHeader.clickOnVideoTab();
         return this;
     }
