@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class BaseTest {
 
     @BeforeEach
-    public static void openApp() {
+    public void openApp() {
         Configuration.browser = "chrome";
         //Configuration.baseUrl = "http://192.168.50.212:4444/wd/hub";
         Configuration.browserSize = "1920x1080";
