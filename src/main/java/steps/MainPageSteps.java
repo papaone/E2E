@@ -9,17 +9,15 @@ public class MainPageSteps {
     MainHeader mainHeader = new MainHeader();
 
     @Step("Navigate to 'Events' page")
-    public MainPageSteps navigateToEventsPage(){
-        mainPage.goToMainPage()
-                .submitCookie();
+    public MainPageSteps navigateToEventsPage() {
+        //mainPage.submitCookie();
         mainHeader.clickOnEventsTab();
         return this;
     }
 
     @Step("Navigate to 'Talks Library' page")
-    public MainPageSteps navigateToTalksLibraryPage(){
-        mainPage.goToMainPage()
-                .submitCookie();
+    public MainPageSteps navigateToTalksLibraryPage() {
+        //mainPage.submitCookie();
         mainHeader.clickOnVideoTab();
         return this;
     }

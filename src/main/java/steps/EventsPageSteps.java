@@ -24,6 +24,7 @@ public class EventsPageSteps {
 
     @Step("Check that 'Events' counter have same value as events cards count")
     public EventsPageSteps checkUpcomingEventCounterIsSameAsCardsCount() {
+        pageLoader.waitLoaderDisappears();
         Assertions.assertEquals(eventsPage.getUpcomingEventCounterValue(), eventsPage.getEventCardCount());
         return this;
     }

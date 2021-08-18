@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 public class TalksLibraryPage {
@@ -10,7 +11,8 @@ public class TalksLibraryPage {
             talksCardName = By.cssSelector("div.evnt-talk-name span");
 
     public TalksLibraryPage clickOnTalksCard() {
-        Selenide.$$(talksCard).first().click();
+        SelenideElement element =  Selenide.$$(talksCard).first();
+        Selenide.$(element).scrollTo().click();
         return this;
     }
 
