@@ -8,20 +8,15 @@ public class MainPage {
     private final String url = "https://events.epam.com/";
 
     private final By
-        acceptCookieButton = By.id("onetrust-accept-btn-handler");
+            acceptCookieButton = By.id("onetrust-accept-btn-handler");
 
-    public MainPage goToMainPage()
-    {
+    public MainPage goToMainPage() {
         Selenide.open(url);
         return this;
     }
 
-    public MainPage submitCookieIfDisplayed()
-    {
-        if(Selenide.$(acceptCookieButton).isDisplayed() == true)
-        {
-            Selenide.$(acceptCookieButton).click();
-        }
+    public MainPage submitCookie() {
+        Selenide.$(acceptCookieButton).click();
         return this;
     }
 }

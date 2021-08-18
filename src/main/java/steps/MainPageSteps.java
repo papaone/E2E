@@ -11,7 +11,7 @@ public class MainPageSteps {
     @Step("Navigate to 'Events' page")
     public MainPageSteps navigateToEventsPage(){
         mainPage.goToMainPage()
-                .submitCookieIfDisplayed();
+                .submitCookie();
         mainHeader.clickOnEventsTab();
         return this;
     }
@@ -19,8 +19,9 @@ public class MainPageSteps {
     @Step("Navigate to 'Talks Library' page")
     public MainPageSteps navigateToTalksLibraryPage(){
         mainPage.goToMainPage()
-                .submitCookieIfDisplayed();
+                .submitCookie();
         mainHeader.clickOnVideoTab();
         return this;
     }
 }
+
